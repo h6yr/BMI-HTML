@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<p>your height<br>
+<input type='text' id='height1' placeholder='1.70'>meters</p>
+<p>your weight<br>
+<input type='text' id='weight1' placeholder='70'>kilograms</p>
+<p>BMI is<br>
+<input type='text' id='bmi' readonly></p>
+<p>rating<br>
+<input type='text' id='rt' readonly></p>
+<p><input type='button' value='calculate' onclick='cal()'></p>
+<script>
+function cal(){
+var hei=document.getElementById('height1').value;
+var wei=document.getElementById('weight1').value;
+var res=wei/(hei*hei);
+var rating;
+if(res<18.5){
+rating='under-weight';
+} else if(res<25){
+rating='normal';
+} else if(res<30){
+rating='over-weight';
+} else if(res<35){
+rating='obsity(type 1)';
+} else if(res<40){
+rating='obsity(type 2)';
+} else if(res>39){
+rating='extreme-obsity';
+}
+document.getElementById('rt').value=rating;
+document.getElementById('bmi').value=res;
+}
+</script>
+</body>
+</html>
